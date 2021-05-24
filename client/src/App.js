@@ -22,7 +22,7 @@ function App() {
     setCats({cats})
 }, [])
 
-  handleChange = (event) => {
+  const handleChange = (event) => {
     let value = event.target.value
     let name = event.target.name
     setFormData(prevState => ({
@@ -31,10 +31,10 @@ function App() {
     }))
   }
 
-  handleSubmit = async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
     const cat = await createCat(formData)
-    setCats([cat, ...prevState.cats])
+    //setCats([cat, ...prevState.cats])
     setFormData({
       formData: {
         name: "",
@@ -45,9 +45,9 @@ function App() {
     })
   }
 
-  handleDelete = async (catId) => {
+  const handleDelete = async (catId) => {
     await destroyCat(catId);
-    setCats(prevState.cats.filter(cat => cat._id !== catId))
+    //setCats(prevState.cats.filter(cat => cat._id !== catId))
   }
   
   return (
