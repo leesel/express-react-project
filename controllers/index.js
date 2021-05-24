@@ -1,0 +1,1 @@
+const Cat = require('../models/cat');
